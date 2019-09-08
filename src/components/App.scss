@@ -1,0 +1,61 @@
+:root {
+  --navbar-bg-color: #242331;
+}
+
+/*border box allows us to add padding and border to our elements without increasing their size */
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Globals */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Montserrat', Sans-serif Helvetica, sans-serif;
+}
+
+.logo {
+  display: inline-block;
+  font-size: 1.5em;
+  .fa-coins,
+  .icon {
+    color: #ffece9;
+  }
+  .icon {
+    font-family: 'Libre Baskerville', serif;
+  }
+  span.icon-text {
+    color: #fff;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+ul {
+  padding-left: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Source Sans Pro', sans-serif;
+}
