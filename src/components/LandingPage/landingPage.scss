@@ -1,0 +1,130 @@
+$hero-text-dark: #33323d;
+
+.landingPage {
+  nav {
+    padding: 0 1rem;
+    background-color: var(--navbar-bg-color);
+    button {
+      color: #fff;
+      border: 1px solid #fff;
+    }
+  }
+
+  .hero-text-box {
+    width: 80%;
+  }
+
+  .hero-text {
+    margin-bottom: 1rem;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    font-size: 1.5em;
+  }
+
+  /* ------------- SECTION 1 ------------- */
+
+  .section1 {
+    height: 90vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #181818;
+
+    .hero-text-box p {
+      color: #f3f3f3;
+      background: #0f0f0f56;
+      max-width: 55ch;
+      padding: 0 0.5em;
+    }
+
+    .hero-text-big {
+      font-size: 2.3em;
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+
+    .hero1 {
+      margin: 20% auto;
+    }
+
+    button {
+      background-color: #80bc65;
+    }
+  }
+
+  /* ------------- SECTION 2 ------------- */
+
+  .section2 {
+    height: 70vh;
+    background-size: 60vw auto;
+    background-repeat: no-repeat;
+    background-position: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    .hero-text-medium {
+      font-size: 1.8em;
+      font-weight: 400;
+      color: $hero-text-dark;
+    }
+
+    .hero2 {
+      text-align: right;
+      width: 40%;
+      margin-right: 2rem;
+    }
+
+    button {
+      border: 2px solid #181818;
+    }
+  }
+
+  /* ------------- SECTION 3 ------------- */
+
+  .section3 {
+    height: 80vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    h2.hero-text {
+      font-size: 1.8em;
+      width: 40%;
+      margin-left: 2rem;
+      color: $hero-text-dark;
+    }
+
+    button {
+      margin-left: 2rem;
+      background-color: #ff6583;
+    }
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .landingPage {
+    .section1 {
+      .hero-text-box p {
+        color: #f3f3f3;
+        background: #0f0f0f56;
+        max-width: 55ch;
+        padding: 0 0.3em;
+        font-size: 1.4em;
+      }
+    }
+
+    .section3 {
+      h2.hero-text {
+        background: #0f0f0f56;
+        color: rgb(247, 247, 247);
+        padding: 0.3em;
+      }
+    }
+  }
+}

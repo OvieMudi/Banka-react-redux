@@ -1,23 +1,23 @@
-const HtmlWebPackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 require('dotenv').config();
 
+const port = process.env.PORT || 3000;
+
 module.exports = {
+  mode: 'development',
+  entry: './src/index.jsx',
+  output: {
+    filename: 'bundle.js',
+    publicPath: '/',
+  },
+  devtool: 'eval-source-map',
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-            options: { minimize: true },
-          },
-        ],
+        use: ['babel-loader'],
       },
       {
         test: /\.(css|scss)$/,
@@ -28,16 +28,11 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
-              localsConvention: 'camelCase',
               sourceMap: true,
             },
           },
           {
             loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
           },
         ],
       },
@@ -47,15 +42,20 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['*', '.js', '.jsx'],
+  },
   plugins: [
-    new HtmlWebPackPlugin({
-      template: './public/index.html',
-      filename: './index.html',
+    new HtmlWebpackPlugin({
+      template: 'public/index.html',
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
-  resolve: {
-    extensions: ['*', '.js', '.jsx'],
-    alias: { 'react-dom': '@hot-loader/react-dom' },
+  devServer: {
+    host: 'localhost',
+    port,
+    hot: true,
+    historyApiFallback: true,
+    open: true,
   },
 };
